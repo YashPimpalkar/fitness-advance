@@ -30,7 +30,7 @@ const WelcomePage = () => {
       <Typography variant="body1" paragraph>
         Start your fitness journey today and achieve your goals with us.
       </Typography>
-      <Button component={Link} to="/" onClick={handleSignInWithGoogle} variant="contained" color="primary" size="large" style={{ marginTop: '20px', backgroundColor: '#FF69B4', color: '#fff' }}>
+      <Button  onClick={handleSignInWithGoogle} variant="contained" color="primary" size="large" style={{ marginTop: '20px', backgroundColor: '#FF69B4', color: '#fff' }}>
         Get Started
       </Button>
     </Container>
