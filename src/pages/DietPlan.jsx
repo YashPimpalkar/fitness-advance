@@ -26,7 +26,7 @@ const DietPlan = () => {
       await signOut(auth);
       localStorage.removeItem('token');
       localStorage.removeItem('user');
-      navigate("login");
+      navigate("/");
     } catch (error) {
       console.error(error)
     }
