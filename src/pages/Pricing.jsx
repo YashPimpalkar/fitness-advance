@@ -71,6 +71,19 @@ const tiers = [
 const defaultTheme = createTheme();
 
 export default function Pricing() {
+   const user = JSON.parse(localStorage.getItem('user'));
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      navigate("login");
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
       <Navbar />
