@@ -16,7 +16,9 @@ import Link from '@mui/material/Link';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import Container from '@mui/material/Container';
 import Navbar from '../components/Navbar'
-
+import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
 
 // ... (rest of your imports)
 
