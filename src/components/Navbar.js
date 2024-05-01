@@ -3,7 +3,7 @@ import {
   AppBar, Box, Toolbar, IconButton, Typography, Menu, Avatar, Button, Tooltip, MenuItem,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import Logo from '../assets/images/Logo.png';
 import { auth } from '../firebase';
 import { signOut } from 'firebase/auth';
@@ -17,7 +17,7 @@ function ResponsiveAppBar() {
       await signOut(auth);
       localStorage.removeItem('token');
       localStorage.removeItem('user');
-      navigate("login");
+      navigate("/login"); // Navigate to the login route
     } catch (error) {
       console.error(error)
     }
@@ -63,38 +63,31 @@ function ResponsiveAppBar() {
           open={Boolean(anchorElNav)}
           onClose={handleCloseNavMenu}
         >
-          {/* ... other menu items ... */}
-          <MenuItem component={Link} to="/" onClick={handleCloseNavMenu}>
-            Home
-          </MenuItem>
+          <MenuItem component={RouterLink} to="/" onClick={handleCloseNavMenu}>Home</MenuItem>
           {location.pathname === "/" && (
-            <MenuItem  onClick={handleCloseNavMenu}>
-                 <Box
-              component="a"
-              href="#exercises"
-              sx={{
-                textDecoration: 'none',
-                color: 'inherit',
-                '&:hover': {
-                  color: 'red',
-                }
-              }}
-            >
-              Exercises
-            </Box>
+            <MenuItem onClick={handleCloseNavMenu}>
+              <Box
+                component="a"
+                href="#exercises"
+                sx={{
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  '&:hover': {
+                    color: 'red',
+                  }
+                }}
+              >
+                Exercises
+              </Box>
             </MenuItem>
           )}
-          <MenuItem component={Link} to="/pricing" onClick={handleCloseNavMenu}>
-            Pricing
-          </MenuItem>
-          <MenuItem component={Link} to="/dietplan" onClick={handleCloseNavMenu}>
-            Diet Plan
-          </MenuItem>
+          <MenuItem component={RouterLink} to="/pricing" onClick={handleCloseNavMenu}>Pricing</MenuItem>
+          <MenuItem component={RouterLink} to="/dietplan" onClick={handleCloseNavMenu}>Diet Plan</MenuItem>
         </Menu>
 
-        <Link to="/">
+        <RouterLink to="/">
           <img src={Logo} alt="logo" style={{ width: '48px', height: '48px', margin: '0 0 0px 0px' }} />
-        </Link>
+        </RouterLink>
         <Typography variant="h6" style={{ flexGrow: 1 }}>
           Fitness-Club
         </Typography>
