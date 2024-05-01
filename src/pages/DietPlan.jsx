@@ -14,8 +14,22 @@ import salmon from "../assets/images/salmon.jpg";
 import pasta from "../assets/images/pasta.jpg";
 import sweetpotato from "../assets/images/sweetpotato.jpg";
 import curry from "../assets/images/curry.jpg";
+import { useNavigate } from 'react-router-dom';
 
 const DietPlan = () => {
+  const user = JSON.parse(localStorage.getItem('user'));
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      navigate("login");
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   const mealPlan = [
     {
       category: 'Breakfast',
