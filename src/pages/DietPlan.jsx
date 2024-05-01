@@ -15,6 +15,8 @@ import pasta from "../assets/images/pasta.jpg";
 import sweetpotato from "../assets/images/sweetpotato.jpg";
 import curry from "../assets/images/curry.jpg";
 import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
 
 const DietPlan = () => {
   const user = JSON.parse(localStorage.getItem('user'));
