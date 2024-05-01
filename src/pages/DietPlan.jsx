@@ -19,18 +19,7 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
 
 const DietPlan = () => {
-  const user = JSON.parse(localStorage.getItem('user'));
-  const navigate = useNavigate();
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      navigate("/");
-    } catch (error) {
-      console.error(error)
-    }
-  }
+
 
   const mealPlan = [
     {
