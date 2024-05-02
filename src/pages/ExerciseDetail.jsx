@@ -44,8 +44,8 @@ const ExerciseDetail = () => {
     <Box sx={{ mt: { lg: '96px', xs: '60px' } }}>
       <Navbar />
       <Detail exerciseDetail={exerciseDetail} />
-      <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
-      <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} />
+{/*       <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} /> */}
+{/*       <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} /> */}
     </Box>
   );
 };
