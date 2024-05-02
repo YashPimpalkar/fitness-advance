@@ -9,19 +9,7 @@ import { auth } from '../firebase';
 import { signOut } from 'firebase/auth';
 
 function ResponsiveAppBar() {
-  const user = JSON.parse(localStorage.getItem('user'));
-  const navigate = useNavigate();
-  const location = useLocation();
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      localStorage.removeItem('token');
-      localStorage.removeItem('user');
-      navigate("/login"); // Navigate to the login route
-    } catch (error) {
-      console.error(error)
-    }
-  }
+
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
