@@ -41,11 +41,13 @@ const ExerciseDetail = () => {
   if (!exerciseDetail) return <div>No Data</div>;
 
   return (
-    <Box sx={{ mt: { lg: '96px', xs: '60px' } }}>
+   <Box width="400px" sx={{ width: { xl: '1488px' } }} m="auto">
       <Navbar />
-      <Detail exerciseDetail={exerciseDetail} />
-{/*       <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} /> */}
-{/*       <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} /> */}
+      <Box sx={{ mt: { lg: '96px', xs: '60px' } }}>
+        <Detail exerciseDetail={exerciseDetail} />
+        <ExerciseVideos exerciseVideos={exerciseVideos} name={exerciseDetail.name} />
+        <SimilarExercises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} />
+      </Box>
     </Box>
   );
 };
